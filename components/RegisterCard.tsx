@@ -37,7 +37,7 @@ const RegisterCard = () => {
         <CardTitle className="text-xl sm:text-2xl font-bold tracking-tight">
           Are you joining?
         </CardTitle>
-        <CardDescription>Let's start with your personal information</CardDescription>
+        <CardDescription>Let&apos;s start with your personal information</CardDescription>
       </CardHeader>
       <CardContent>
         <form action="" className="grid gap-4">

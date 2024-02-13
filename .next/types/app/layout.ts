@@ -1,4 +1,4 @@
-// File: C:\Users\joshu\source\repos\wfh-task-sync - Copy\app\layout.tsx
+// File: C:\Users\joshu\source\repos\wfh-task-sync-02\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
