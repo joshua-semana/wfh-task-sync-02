@@ -11,18 +11,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
+import PasswordInput from "./PasswordInput";
 
 const LoginCard = () => {
-  const [passwordInputType, setPasswordInputType] = useState("password");
-  const [passwordState, setPasswordState] = useState(false);
-
-  const togglePasswordState = () => {
-    setPasswordState(!passwordState);
-    setPasswordInputType(passwordState ? "password" : "text");
-  };
-
   return (
     <Card>
       <CardHeader className="text-center text-pretty">
@@ -39,21 +30,7 @@ const LoginCard = () => {
           </div>
           <div className="flex flex-col space-y-2">
             <Label htmlFor="password">Password</Label>
-            <div className="flex gap-2">
-              <Input type={passwordInputType} id="password" />
-              <Button
-                onClick={togglePasswordState}
-                type="button"
-                variant={"outline"}
-                size={"icon"}
-                className="flex-none">
-                {passwordState ? (
-                  <EyeClosedIcon className="size-4" />
-                ) : (
-                  <EyeOpenIcon className="size-4" />
-                )}
-              </Button>
-            </div>
+            <PasswordInput id="password" />
           </div>
           <Button type="submit">Login</Button>
         </form>

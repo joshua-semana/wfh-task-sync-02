@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
+import PasswordInput from "./PasswordInput";
 
 const RegisterCard = () => {
   const [passwordInputType, setPasswordInputType] = useState("password");
@@ -55,43 +55,11 @@ const RegisterCard = () => {
           </div>
           <div className="flex flex-col space-y-2">
             <Label htmlFor="Password">Password</Label>
-            <div className="flex gap-2">
-              <Input type={passwordInputType} id="password" placeholder="minimum of 8 characters" />
-              <Button
-                onClick={togglePasswordState}
-                type="button"
-                variant={"outline"}
-                size={"icon"}
-                className="flex-none">
-                {passwordState ? (
-                  <EyeClosedIcon className="size-4" />
-                ) : (
-                  <EyeOpenIcon className="size-4" />
-                )}
-              </Button>
-            </div>
+            <PasswordInput id="Password" minimumCount={8} toggle={true} />
           </div>
           <div className="flex flex-col space-y-2">
             <Label htmlFor="ConfirmPassword">Confirm Password</Label>
-            <div className="flex gap-2">
-              <Input
-                type={confirmPasswordInputType}
-                id="password"
-                placeholder="re-enter your password"
-              />
-              <Button
-                onClick={toggleConfirmPasswordState}
-                type="button"
-                variant={"outline"}
-                size={"icon"}
-                className="flex-none">
-                {confirmPasswordState ? (
-                  <EyeClosedIcon className="size-4" />
-                ) : (
-                  <EyeOpenIcon className="size-4" />
-                )}
-              </Button>
-            </div>
+            <PasswordInput id="ConfirmPassword" minimumCount={8} toggle={true} />
           </div>
           <Button type="submit">Continue</Button>
         </form>
